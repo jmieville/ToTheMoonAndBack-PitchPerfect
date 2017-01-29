@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 extension PlaySoundsViewController: AVAudioPlayerDelegate {
+    //Alerts Struct
     struct Alerts {
         static let DismissAlert = "Dismiss"
         static let RecordingDisabledTitle = "Recording Disabled"
