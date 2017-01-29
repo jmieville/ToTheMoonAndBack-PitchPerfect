@@ -13,7 +13,7 @@ import UIKit
 
 class PlaySoundsViewController: UIViewController {
     
-    
+    //Outlets
     @IBOutlet weak var snailButton: UIButton!
     @IBOutlet weak var rabbitButton: UIButton!
     @IBOutlet weak var chipmunkButton: UIButton!
