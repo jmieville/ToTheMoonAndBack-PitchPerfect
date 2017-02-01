@@ -23,12 +23,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func RecordAudio(sender: AnyObject) {
         print("record the button")
         configureRecordingButtons(isRecording: true)
-        /*
-        recordingLabel.text = "Recording in progress..."
-        recordingLabel.textColor = UIColor.red
-        stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false
- */
+
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
         let pathArray = [dirPath, recordingName]
@@ -48,12 +43,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func StopRecordAudio(sender: AnyObject) {
         print("stop recording the audio")
         configureRecordingButtons(isRecording: false)
-        /*
-        recordingLabel.text = "Tap to Record"
-        recordingLabel.textColor = UIColor.gray
-        recordButton.isEnabled = true
-        stopRecordingButton.isEnabled = false
- */
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
@@ -63,7 +52,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func configureRecordingButtons(isRecording: Bool){
         recordingLabel.text = isRecording ? "Recording in progress" : "Tap to record"
         recordButton.isEnabled = isRecording ? false : true
-        recordingLabel.textColor = isRecording ? UIColor.red : UIColor.gray
+        recordingLabel.textColor = isRecording ? UIColor.blue : UIColor.gray
         stopRecordingButton.isEnabled = isRecording ? true : false
     }
     

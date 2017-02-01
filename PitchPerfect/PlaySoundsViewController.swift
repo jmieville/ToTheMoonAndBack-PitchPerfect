@@ -55,11 +55,6 @@ class PlaySoundsViewController: UIViewController {
         stopAudio()
     }
     
-   
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("PlaySoundsViewController loaded")
@@ -70,7 +65,6 @@ class PlaySoundsViewController: UIViewController {
         configureUI(playState: .NotPlaying)
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "stopRecording") {
             let playSoundsVC = segue.destination as! PlaySoundsViewController
@@ -78,5 +72,4 @@ class PlaySoundsViewController: UIViewController {
             playSoundsVC.recordedAudioURL = recordedAudioURL
         }
     }
-
 }
